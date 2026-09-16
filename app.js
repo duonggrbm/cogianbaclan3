@@ -21,9 +21,9 @@ function special(hand){
 }
 function power(hand){const sp=special(hand);return sp==="Xì Bàng"?1000:sp==="Xì Dách"?900:sp==="Ngũ Linh"?800:val(hand)}
 
-// Cân bằng lợi thế Cái: ưu tiên khoảng 70% thắng nhưng vẫn giữ cảm giác ngẫu nhiên
+// Cân bằng lợi thế Cái: ưu tiên khoảng 65% thắng nhưng vẫn giữ cảm giác ngẫu nhiên
 function dealerCard(){
-  const winBias = Math.random() < 0.70;
+  const winBias = Math.random() < 0.65;
   if(winBias){
     const good = deck.filter(c=>{
       const test = dealerHand.concat([c]);
@@ -39,7 +39,7 @@ function dealerCard(){
   return deck.pop();
 }
 function dealDealerStart(){
-  const winBias = Math.random() < 0.70;
+  const winBias = Math.random() < 0.65;
   if(winBias){
     const goodPairs=[];
     for(let i=0;i<deck.length;i++) for(let j=i+1;j<deck.length;j++){
