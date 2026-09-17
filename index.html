@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xì Dách Online - Chơi cùng bạn bè</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body><div class="app">
+<header><h1>🃏 Xì Dách Online</h1><p>Chơi cùng bạn bè • Cái là vai trò, không phải tên</p></header>
+<main>
+<section id="joinScreen" class="card">
+<h2>Vào phòng</h2>
+<input id="nameInput" maxlength="20" placeholder="Tên của bạn" autocomplete="off">
+<input id="roomInput" maxlength="8" placeholder="Mã phòng (nếu có)" autocomplete="off">
+<button id="createBtn">Tạo phòng — làm Cái</button>
+<button id="joinBtn" class="secondary">Vào phòng</button>
+<p id="joinStatus" class="status"></p>
+</section>
+
+<section id="gameScreen" class="hidden">
+<div class="topbar card">
+<div><b>Phòng:</b> <span id="roomCode"></span></div><div><b>Vai trò:</b> <span id="roleBadge"></span></div>
+<button id="leaveBtn" class="danger small">Rời phòng</button>
+</div>
+<div class="card invite"><b>🔗 Link mời bạn bè</b><div class="inviteRow"><input id="inviteLink" readonly><button id="copyBtn" class="small">📋 Copy</button></div><small>Cái phải giữ trang này mở trong suốt lúc chơi.</small></div>
+<div class="card"><h2>Người trong phòng</h2><div id="players" class="players"></div><button id="startBtn">🎲 Bắt đầu ván</button><div id="gameStatus" class="status"></div></div>
+
+<div class="card hand-area"><h2 id="myPanelTitle">Bài của tôi</h2><div id="myHand" class="hand"></div><div class="score">Điểm: <b id="myScore">-</b></div><div class="actions"><button id="drawBtn">🃏 Rút bài</button><button id="stopBtn" class="secondary">✋ Dừng</button></div></div>
+
+<div id="dealerPanel" class="card hidden"><h2>Bài của Cái</h2><div id="dealerHand" class="hand"></div><div class="score">Điểm: <b id="dealerScore">-</b></div><p id="dealerRule" class="rule"></p><div class="actions"><button id="dealerDrawBtn">🃏 Rút bài</button><button id="dealerStopBtn" class="secondary">✋ Dừng</button></div></div>
+
+<div id="resultPanel" class="card hidden"><h2>🏆 Kết quả</h2><div id="results"></div><button id="nextRoundBtn">Ván mới</button></div>
+</section></main>
+<footer>Không dùng tiền thật. Kết nối trực tiếp qua PeerJS/WebRTC.</footer></div>
+<script src="app.js"></script></body></html>
